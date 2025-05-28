@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#1d1d1d] text-white">
+    <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-6">
@@ -40,7 +40,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Sobre Nós
                 </a>
@@ -48,7 +48,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Nossos Serviços
                 </a>
@@ -56,7 +56,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Case Studies
                 </a>
@@ -64,7 +64,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Blog
                 </a>
@@ -79,7 +79,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Lançamento de Produto
                 </a>
@@ -87,7 +87,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   PMM as a Service
                 </a>
@@ -95,7 +95,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Marketing Estratégico
                 </a>
@@ -103,7 +103,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-brand-light hover:text-white transition-colors"
+                  className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
                   Consultoria
                 </a>
@@ -117,15 +117,21 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-light" />
-                <span className="text-brand-light">contato@gtmbrasil.com</span>
+                <span className="text-action-sm text-brand-light">
+                  contato@gtmbrasil.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-light" />
-                <span className="text-brand-light">+55 11 9999-9999</span>
+                <span className="text-action-sm text-brand-light">
+                  +55 11 9999-9999
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-brand-light" />
-                <span className="text-brand-light">São Paulo, SP</span>
+                <span className="text-action-sm text-brand-light">
+                  São Paulo, SP
+                </span>
               </div>
             </div>
           </div>
@@ -139,19 +145,19 @@ export const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
               href="#"
-              className="text-brand-light hover:text-white transition-colors"
+              className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
               Privacidade
             </a>
             <a
               href="#"
-              className="text-brand-light hover:text-white transition-colors"
+              className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
               Termos
             </a>
             <a
               href="#"
-              className="text-brand-light hover:text-white transition-colors"
+              className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
               Cookies
             </a>
