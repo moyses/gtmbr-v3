@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { ActiveLink } from '../active-link';
+import Image from 'next/image';
 
 export const Header = () => {
   return (
@@ -9,7 +10,12 @@ export const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-brand-primary">
-              Logo GTMBR
+              <Image
+                src="/gtmbr-logo-main.svg"
+                alt="Go to Market Brasil Logo"
+                width={212}
+                height={38}
+              />
             </Link>
           </div>
 
