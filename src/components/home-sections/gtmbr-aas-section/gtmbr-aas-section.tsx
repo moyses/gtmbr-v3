@@ -7,8 +7,13 @@ import {
   UserCheck,
   UserPen,
 } from 'lucide-react';
-import { Button } from '../ui/button';
-import { AnimateOnScroll, StaggerChildren, StaggerItem } from '../ui/motion';
+import { Button } from '@/components/ui/button';
+
+import {
+  AnimateOnScroll,
+  StaggerChildren,
+  StaggerItem,
+} from '@/components/ui/motion';
 
 type CardProps = {
   icon: React.ReactNode;

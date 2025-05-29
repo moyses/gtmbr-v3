@@ -1,9 +1,9 @@
-import { GtmbrAasSection } from '@/components/gtmbr-aas-section';
-import { HeroSection } from '@/components/hero-section';
-import { LaunchFailSection } from '@/components/launch-fail-section';
-import { TrustedCompanies } from '@/components/trusted-companies';
-import { WhyGtmbrSection } from '@/components/why-gtmbr-section';
-import { FeatureGTMSection } from '@/components/feature-gtm-section';
+import { GtmbrAasSection } from '@/components/home-sections/gtmbr-aas-section';
+import { HeroSection } from '@/components/home-sections/hero-section';
+import { LaunchFailSection } from '@/components/home-sections/launch-fail-section';
+import { TrustedCompanies } from '@/components/home-sections/trusted-companies';
+import { WhyGtmbrSection } from '@/components/home-sections/why-gtmbr-section';
+import { FeatureGTMSection } from '@/components/home-sections/feature-gtm-section';
 
 export default function Home() {
   return (

@@ -12,14 +12,14 @@ import {
   SearchCheck,
 } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '../ui/button';
+import { Button } from '@/components//ui/button';
 import {
   AnimateOnScroll,
   AnimateOnScrollFromLeft,
   AnimateOnScrollFromRight,
   StaggerChildren,
   StaggerItem,
-} from '../ui/motion';
+} from '@/components//ui/motion';
 
 type FloatingTag = {
   text: string;

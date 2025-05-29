@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
   CheckCircle2,
@@ -11,8 +11,8 @@ import {
   LaughIcon,
 } from 'lucide-react';
 import Image from 'next/image';
-import { AnimateOnScroll } from '../ui/motion';
 import { motion } from 'framer-motion';
+import { AnimateOnScroll } from '@/components/ui/motion';
 
 type Feature = {
   titleBtn: string;
