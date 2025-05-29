@@ -115,7 +115,7 @@ export const HeroSection = () => {
                 ref={(el) => {
                   cardsRef.current[0] = el;
                 }}
-                className="bg-white rounded-2xl p-6 hover:shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
@@ -146,7 +146,7 @@ export const HeroSection = () => {
                   ref={(el) => {
                     cardsRef.current[1] = el;
                   }}
-                  className="bg-white rounded-2xl p-6 hover:shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                  className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
@@ -172,7 +172,7 @@ export const HeroSection = () => {
                   ref={(el) => {
                     cardsRef.current[2] = el;
                   }}
-                  className="bg-white rounded-2xl p-6 hover:shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                  className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
@@ -200,7 +200,7 @@ export const HeroSection = () => {
                 ref={(el) => {
                   cardsRef.current[3] = el;
                 }}
-                className="bg-white rounded-2xl p-6 hover:shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
