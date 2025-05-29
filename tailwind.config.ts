@@ -25,13 +25,14 @@ export default {
     extend: {
       colors: {
         white: '#FFFFFF',
+        dark: '#090227',
         brand: {
-          primary: '#222145',
+          primary: '#8536fd',
           secondary: '#403f94',
           light: '#f0f4fd',
         },
         purple: {
-          600: '#a125f8',
+          600: '#d0c3f9',
           800: '#7617b2',
           900: '#61148f',
           950: '#43006b',
@@ -52,28 +53,28 @@ export default {
           800: '#0B0C0F',
         },
       },
-    },
-    fontFamily: {
-      sans: ['PT Sans Caption', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
-    },
-    fontSize: {
-      // Headings - PT Sans Caption
-      'heading-hg': ['40px', { lineHeight: '120%', fontWeight: '700' }],
-      'heading-xl': ['32px', { lineHeight: '120%', fontWeight: '700' }],
-      'heading-lg': ['28px', { lineHeight: '120%', fontWeight: '700' }],
-      'heading-md': ['24px', { lineHeight: '120%', fontWeight: '700' }],
-      'heading-sm': ['20px', { lineHeight: '120%', fontWeight: '700' }],
-      'heading-xs': ['16px', { lineHeight: '120%', fontWeight: '700' }],
+      fontFamily: {
+        sans: ['PT Sans Caption', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        // Headings - PT Sans Caption
+        'heading-hg': ['40px', { lineHeight: '120%', fontWeight: '700' }],
+        'heading-xl': ['32px', { lineHeight: '120%', fontWeight: '700' }],
+        'heading-lg': ['28px', { lineHeight: '120%', fontWeight: '700' }],
+        'heading-md': ['24px', { lineHeight: '120%', fontWeight: '700' }],
+        'heading-sm': ['20px', { lineHeight: '120%', fontWeight: '700' }],
+        'heading-xs': ['16px', { lineHeight: '120%', fontWeight: '700' }],
 
-      // Body - Inter
-      'body-md': ['16px', { lineHeight: '150%', fontWeight: '400' }],
-      'body-sm': ['14px', { lineHeight: '150%', fontWeight: '400' }],
-      'body-xs': ['12px', { lineHeight: '150%', fontWeight: '400' }],
+        // Body - Inter
+        'body-md': ['16px', { lineHeight: '150%', fontWeight: '400' }],
+        'body-sm': ['14px', { lineHeight: '150%', fontWeight: '400' }],
+        'body-xs': ['12px', { lineHeight: '150%', fontWeight: '400' }],
 
-      // Action - Inter
-      'action-md': ['16px', { lineHeight: 'normal', fontWeight: '500' }],
-      'action-sm': ['14px', { lineHeight: 'normal', fontWeight: '500' }],
+        // Action - Inter
+        'action-md': ['16px', { lineHeight: 'normal', fontWeight: '500' }],
+        'action-sm': ['14px', { lineHeight: 'normal', fontWeight: '500' }],
+      },
     },
   },
   plugins: [animate],
