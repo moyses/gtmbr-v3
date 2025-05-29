@@ -75,7 +75,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-dark via-white to-brand-light py-12 relative"
+      className="bg-dark via-white to-brand-light py-32 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="gap-12 items-center flex flex-col">
@@ -89,9 +89,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-white text-[60px] leading-[120%] font-bold max-w-[860px] mx-auto"
+              className="text-white text-heading-hg leading-[120%] font-bold max-w-[860px] mx-auto"
             >
-              Lance, Valide e
+              Lance, valide e
               <motion.span
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -99,7 +99,7 @@ export const HeroSection = () => {
                 className="text-brand-primary"
               >
                 {' '}
-                Escale Seu Software ou Aplicativo
+                escale seu software ou aplicativo
               </motion.span>{' '}
               do jeito certo. No tempo certo.
             </motion.h1>
@@ -140,7 +140,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
-            className="p-8 grid grid-cols-3 gap-6 relative -mb-44"
+            className="p-8 grid grid-cols-3 gap-6 relative -mb-60"
           >
             {/* Primeiro card */}
             <div className="transform-gpu">

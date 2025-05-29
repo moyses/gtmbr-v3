@@ -11,7 +11,7 @@ export const LaunchFailSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-[56px] font-bold text-dark mb-6">
+            <h2 className="text-heading-hg font-bold text-dark mb-6 max-w-[860px] mx-auto">
               A maioria dos{' '}
               <span className="text-brand-primary">lançamentos falha</span> por
               motivos que poderiam ser evitados.

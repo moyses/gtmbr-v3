@@ -60,7 +60,7 @@ export const WhyGtmbrSection = () => {
             <div className="rounded-5xl p-5 relative flex items-center justify-center min-h-[600px]">
               <div className="relative w-[600px] h-[600px]">
                 {/* Círculo central com logo */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 bg-purple-950 rounded-full flex items-center justify-center p-6 shadow-lg">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 bg-dark rounded-full flex items-center justify-center p-6 shadow-lg">
                   <Image
                     src="/gtmbr-logo-white.svg"
                     alt="GTM BR Logo"
@@ -120,7 +120,7 @@ export const WhyGtmbrSection = () => {
           <AnimateOnScrollFromRight>
             <div>
               <AnimateOnScroll>
-                <h2 className="text-heading-xl font-bold mb-8">
+                <h2 className="text-heading-hg font-bold mb-8">
                   Por que a Go to Market Brasil é ideal para sua tech company?
                 </h2>
 

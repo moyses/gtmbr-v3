@@ -97,7 +97,7 @@ export const FeatureGTMSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="text-[56px] font-bold text-dark mb-6"
+              className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6"
             >
               <motion.span
                 initial={{ opacity: 0, scale: 0.9 }}

@@ -24,7 +24,7 @@ const cards: CardProps[] = [
     label: 'PMM as a Service',
     title: 'Gestão estratégica contínua de marketing de produto',
     description:
-      'nalisamos continuamente o posicionamento, comportamento do mercado, concorrência e resultados do produto. Atuamos como uma extensão do seu time, garantindo que as decisões não sejam tomadas com base apenas em achismos, mas em dados, contexto e estratégia.',
+      'Analisamos continuamente o posicionamento, comportamento do mercado, concorrência e resultados do produto. Atuamos como uma extensão do seu time, garantindo que as decisões não sejam tomadas com base apenas em achismos, mas em dados, contexto e estratégia.',
     items: [
       'Gestão estratégica contínua de marketing de produto',
       'Análises recorrentes de concorrência e posicionamento',
@@ -96,7 +96,7 @@ export const GtmbrAasSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <h2 className="text-[56px] font-bold text-dark mb-6">
+            <h2 className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6">
               <span className="text-brand-primary">
                 Go to Market é uma disciplina.
               </span>{' '}
