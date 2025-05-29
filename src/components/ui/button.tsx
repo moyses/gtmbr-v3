@@ -16,7 +16,7 @@ const buttonVariants = cva(
         outline:
           'border border-purple-600/50 bg-background hover:bg-purple-600/10 text-purple-900 hover:text-purple-950 transition-all duration-200',
         secondary:
-          'bg-white text-gray-800 hover:bg-purple-800 hover:text-white transition-all duration-200',
+          'bg-white text-gray-800 hover:bg-brand-primary hover:text-white transition-all duration-200',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
       },

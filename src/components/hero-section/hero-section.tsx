@@ -87,7 +87,7 @@ export const HeroSection = () => {
             </h1>
 
             <p className="text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto">
-              Transfor mamos suas ideias em produtos de mercado com estratégias
+              Transformamos suas ideias em produtos de mercado com estratégias
               de Go-to-Market comprovadas. Acelere seu crescimento com nossa
               metodologia especializada.
             </p>
@@ -95,17 +95,13 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 mx-auto max-w-[600px]">
               <Button
                 size="lg"
-                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3 text-lg"
+                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3 text-md"
               >
                 Analise sua estratégia agora
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-brand-primary text-brand-primary hover:bg-brand-light px-8 py-3 text-lg"
-              >
+              <Button variant="secondary" size="lg" className="text-md">
                 Fale com um consultor
               </Button>
             </div>
@@ -124,14 +120,21 @@ export const HeroSection = () => {
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
                   <h2 className="text-gray-400 text-heading-sm mb-2">
-                    Payroll Summary
+                    Product Market Fit
                   </h2>
+                  <p className="text-gray-300 text-body-sm">
+                    Evite lançar no escuro. Alinhe produto e mercado com
+                    validações reais.
+                  </p>
                   <div className="text-dark text-heading-hg font-bold">
-                    $52,000
+                    +32% de conversão
                   </div>
-                  <button className="mt-4 text-brand-primary text-action-sm">
-                    See The Details
-                  </button>
+                  <p className="text-gray-300 text-body-sm">
+                    em lançamentos validados.
+                  </p>
+                  <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 text-action-sm mt-2">
+                    Veja como validar antes de lançar
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,19 +150,18 @@ export const HeroSection = () => {
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-purple-600"></div>
+                    <div className="flex items-center mb-4">
                       <div>
                         <h2 className="text-dark text-heading-sm">
-                          Maryland Winkles
+                          Posicionamento Estratégico
                         </h2>
                         <p className="text-gray-300 text-body-sm">
-                          Product Designer
+                          Mensagens que conectam com o público certo.
                         </p>
                       </div>
                     </div>
-                    <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full px-4 py-1 text-action-sm">
-                      Onboarding
+                    <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 text-action-sm">
+                      Diferenciação clara no mercado.
                     </div>
                   </div>
                 </div>
@@ -175,22 +177,17 @@ export const HeroSection = () => {
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
                     <div className="text-dark text-heading-xl mb-4">
-                      05:45:59
+                      Campanha de ativação
                     </div>
-                    <p className="text-gray-400 text-body-sm mb-2">
-                      Thu, 12 February, 2023
-                    </p>
                     <div className="mt-4">
                       <h3 className="text-dark text-heading-xs mb-2">
-                        Project task
+                        Pipe de tarefas
                       </h3>
                       <div className="space-y-2">
                         <div className="h-2 bg-purple-600 rounded-full w-3/4"></div>
                         <div className="h-2 bg-gray-200 rounded-full w-full"></div>
+                        <div className="h-2 bg-purple-200 rounded-full w-3/4"></div>
                       </div>
-                      <button className="mt-6 w-full bg-brand-primary text-white rounded-lg py-2 text-action-sm">
-                        Clock out
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -207,21 +204,20 @@ export const HeroSection = () => {
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
-                  <div className="text-dark text-heading-xl mb-4">05:45:59</div>
-                  <p className="text-gray-400 text-body-sm mb-2">
-                    Thu, 12 February, 2023
+                  <div className="text-dark text-heading-xl mb-4">
+                    Retenção após 90 dias
+                  </div>
+                  <p className="text-gray-300 text-body-sm mb-2">
+                    Com base em produtos lançados
                   </p>
                   <div className="mt-4">
                     <h3 className="text-dark text-heading-xs mb-2">
-                      Project task
+                      Acompanhamento pós-lançamento
                     </h3>
                     <div className="space-y-2">
                       <div className="h-2 bg-purple-600 rounded-full w-3/4"></div>
                       <div className="h-2 bg-gray-200 rounded-full w-full"></div>
                     </div>
-                    <button className="mt-6 w-full bg-brand-primary text-white rounded-lg py-2 text-action-sm">
-                      Clock out
-                    </button>
                   </div>
                 </div>
               </div>
