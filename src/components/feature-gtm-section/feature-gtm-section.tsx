@@ -11,6 +11,8 @@ import {
   LaughIcon,
 } from 'lucide-react';
 import Image from 'next/image';
+import { AnimateOnScroll } from '../ui/motion';
+import { motion } from 'framer-motion';
 
 type Feature = {
   titleBtn: string;
@@ -88,86 +90,125 @@ export const FeatureGTMSection = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-[56px] font-bold text-dark mb-6">
-            <span className="text-brand-primary">Somos o elo estratégico</span>{' '}
-            entre produto, mercado, receita e execução.
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Gerencie todas as suas tags de marketing, analytics e rastreamento
-            em uma única plataforma intuitiva.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {features.map((feature) => (
-            <Button
-              key={feature.id}
-              variant={selectedFeature === feature.id ? 'default' : 'ghost'}
-              className={cn(
-                'h-auto py-4 px-4 flex flex-row items-center justify-center text-center text-body-md transition-all duration-300 gap-2',
-                selectedFeature === feature.id
-                  ? 'text-body-md bg-brand-primary hover:bg-brand-primary/90 text-white scale-105'
-                  : 'hover:bg-brand-primary/10 border-brand-primary/20'
-              )}
-              onClick={() => setSelectedFeature(feature.id)}
+        <AnimateOnScroll>
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="text-[56px] font-bold text-dark mb-6"
             >
-              <div
-                className={cn(
-                  'w-5 h-5',
-                  selectedFeature === feature.id
-                    ? 'text-white'
-                    : 'text-brand-primary'
-                )}
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+                className="text-brand-primary"
               >
-                {feature.icon}
-              </div>
-              <span className="font-semibold">{feature.titleBtn}</span>
-            </Button>
+                Somos o elo estratégico
+              </motion.span>{' '}
+              entre produto, mercado, receita e execução.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            >
+              Gerencie todas as suas tags de marketing, analytics e rastreamento
+              em uma única plataforma intuitiva.
+            </motion.p>
+          </div>
+        </AnimateOnScroll>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.3,
+                delay: index * 0.1,
+                ease: 'easeOut',
+              }}
+            >
+              <Button
+                variant={selectedFeature === feature.id ? 'default' : 'ghost'}
+                className={cn(
+                  'h-14 py-2 px-4 flex flex-row items-center justify-center text-center text-body-md w-full transition-all duration-300 gap-2',
+                  selectedFeature === feature.id
+                    ? 'text-body-md bg-brand-primary hover:bg-brand-primary/90 text-white scale-105'
+                    : 'hover:bg-brand-primary/10 border-brand-primary/20'
+                )}
+                onClick={() => setSelectedFeature(feature.id)}
+              >
+                <div
+                  className={cn(
+                    'w-5 h-5 flex-shrink-0',
+                    selectedFeature === feature.id
+                      ? 'text-white'
+                      : 'text-brand-primary'
+                  )}
+                >
+                  {feature.icon}
+                </div>
+                <span className="font-semibold line-clamp-1">
+                  {feature.titleBtn}
+                </span>
+              </Button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="md:p-2 md:pt-5">
-          {features.map((feature) => (
-            <div
-              key={feature.id}
-              className={cn(
-                'grid md:grid-cols-2 gap-8 transition-all duration-500 items-center',
-                selectedFeature === feature.id
-                  ? 'opacity-100'
-                  : 'hidden opacity-0'
-              )}
-            >
-              <div className="flex flex-col justify-center">
-                <h3 className="text-heading-xl font-bold text-dard mb-4 flex items-center gap-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-lg mb-6">
-                  {feature.description}
-                </p>
-                <ul className="space-y-4">
-                  {feature.benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-center text-gray-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-primary mr-3 flex-shrink-0" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative rounded-xl overflow-hidden">
-                <div className="flex items-center justify-center p-1">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={542}
-                    height={550}
-                    className="max-h-[500px] w-auto"
-                    priority
-                  />
+          {features.map((feature) =>
+            selectedFeature === feature.id ? (
+              <div
+                key={feature.id}
+                className="grid md:grid-cols-2 gap-12 items-center transition-opacity duration-300"
+              >
+                <div className="flex flex-col justify-center space-y-6">
+                  <h3 className="text-heading-xl font-bold text-dark">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-lg">{feature.description}</p>
+                  <ul className="space-y-4">
+                    {feature.benefits.map((benefit, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start text-gray-700"
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-brand-primary mr-3 flex-shrink-0 mt-1" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="relative rounded-xl overflow-hidden flex items-center justify-center">
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={542}
+                      height={550}
+                      className="w-auto h-auto"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ) : null
+          )}
         </div>
       </div>
     </section>

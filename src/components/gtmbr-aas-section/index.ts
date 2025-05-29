@@ -1,1 +1,1 @@
-export * from './gtmbr-aas-section';
+export { GtmbrAasSection } from './gtmbr-aas-section';

@@ -1,6 +1,9 @@
+'use client';
+
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useCallback, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,23 +79,48 @@ export const HeroSection = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="gap-12 items-center flex flex-col">
-          <div className="space-y-8 animate-fade-in text-center">
-            <h1 className="text-white text-[60px] leading-[120%] font-bold max-w-[860px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="space-y-8 text-center"
+          >
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="text-white text-[60px] leading-[120%] font-bold max-w-[860px] mx-auto"
+            >
               Lance, Valide e
-              <span className="text-brand-primary">
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
+                className="text-brand-primary"
+              >
                 {' '}
                 Escale Seu Software ou Aplicativo
-              </span>{' '}
+              </motion.span>{' '}
               do jeito certo. No tempo certo.
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+              className="text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto"
+            >
               Transformamos suas ideias em produtos de mercado com estratégias
               de Go-to-Market comprovadas. Acelere seu crescimento com nossa
               metodologia especializada.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mx-auto max-w-[600px]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+              className="flex flex-col sm:flex-row gap-4 mx-auto max-w-[600px]"
+            >
               <Button
                 size="lg"
                 className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3 text-md"
@@ -104,17 +132,25 @@ export const HeroSection = () => {
               <Button variant="secondary" size="lg" className="text-md">
                 Fale com um consultor
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Cards com animação */}
-          <div className="p-8 grid grid-cols-3 gap-6 relative -mb-44">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
+            className="p-8 grid grid-cols-3 gap-6 relative -mb-44"
+          >
             {/* Primeiro card */}
             <div className="transform-gpu">
-              <div
+              <motion.div
                 ref={(el) => {
                   cardsRef.current[0] = el;
                 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
                 className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                 style={{ transformStyle: 'preserve-3d' }}
               >
@@ -136,16 +172,19 @@ export const HeroSection = () => {
                     Veja como validar antes de lançar
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Coluna do meio com dois cards */}
             <div className="space-y-6">
               <div className="transform-gpu">
-                <div
+                <motion.div
                   ref={(el) => {
                     cardsRef.current[1] = el;
                   }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
                   className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
@@ -164,14 +203,17 @@ export const HeroSection = () => {
                       Diferenciação clara no mercado.
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               <div className="transform-gpu">
-                <div
+                <motion.div
                   ref={(el) => {
                     cardsRef.current[2] = el;
                   }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
                   className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
@@ -190,16 +232,19 @@ export const HeroSection = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Último card */}
             <div className="transform-gpu">
-              <div
+              <motion.div
                 ref={(el) => {
                   cardsRef.current[3] = el;
                 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.8 }}
                 className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                 style={{ transformStyle: 'preserve-3d' }}
               >
@@ -220,9 +265,9 @@ export const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

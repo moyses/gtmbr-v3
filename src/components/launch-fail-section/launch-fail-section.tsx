@@ -1,26 +1,38 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
+import { AnimateOnScroll, StaggerChildren, StaggerItem } from '../ui/motion';
 
 export const LaunchFailSection = () => {
   return (
     <section className="py-24 bg-gray-200/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-[56px] font-bold text-dark mb-6">
-            A maioria dos{' '}
-            <span className="text-brand-primary">lançamentos falha</span> por
-            motivos que poderiam ser evitados.
-          </h2>
-          <p className="text-gray-800 text-lg max-w-3xl mx-auto">
-            Mesmo empresas com bons produtos enfrentam barreiras silenciosas que
-            comprometem resultados desde o primeiro trimestre pós-lançamento.
-          </p>
-        </div>
+        <AnimateOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-[56px] font-bold text-dark mb-6">
+              A maioria dos{' '}
+              <span className="text-brand-primary">lançamentos falha</span> por
+              motivos que poderiam ser evitados.
+            </h2>
+            <p className="text-gray-800 text-lg max-w-3xl mx-auto">
+              Mesmo empresas com bons produtos enfrentam barreiras silenciosas
+              que comprometem resultados desde o primeiro trimestre
+              pós-lançamento.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1 - Falta de clareza */}
-          <div className="bg-white backdrop-blur-sm rounded-2xl p-8 border border-purple-600">
+          <StaggerItem
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 },
+            }}
+            className="bg-white backdrop-blur-sm rounded-2xl p-8 border border-purple-600"
+          >
             <div className="mb-6">
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
@@ -39,10 +51,16 @@ export const LaunchFailSection = () => {
               a realidade da demanda. Isso gera uma baixa adoção e alto custo de
               aquisição.
             </p>
-          </div>
+          </StaggerItem>
 
           {/* Card 2 - Posicionamento */}
-          <div className="bg-white rounded-2xl p-8 border border-purple-600">
+          <StaggerItem
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 },
+            }}
+            className="bg-white rounded-2xl p-8 border border-purple-600"
+          >
             <div className="mb-6">
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
@@ -61,10 +79,16 @@ export const LaunchFailSection = () => {
               disputa por preço ou é comparado a soluções com escopo diferente.
               Isso afeta a percepção de valor e prejudica as vendas.
             </p>
-          </div>
+          </StaggerItem>
 
           {/* Card 3 - Precificação */}
-          <div className="bg-white rounded-2xl p-8 border border-purple-600">
+          <StaggerItem
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 },
+            }}
+            className="bg-white rounded-2xl p-8 border border-purple-600"
+          >
             <div className="mb-6">
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
@@ -83,10 +107,16 @@ export const LaunchFailSection = () => {
               desbalanceadas impactam a escalabilidade e a sustentabilidade do
               seu produto digital.
             </p>
-          </div>
+          </StaggerItem>
 
           {/* Card 4 - Desalinhamento */}
-          <div className="bg-white rounded-2xl p-8 border border-purple-600">
+          <StaggerItem
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 },
+            }}
+            className="bg-white rounded-2xl p-8 border border-purple-600"
+          >
             <div className="mb-6">
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
@@ -106,29 +136,31 @@ export const LaunchFailSection = () => {
               comunicar valor, e o produto não responde ao que o mercado
               precisa.
             </p>
-          </div>
-        </div>
+          </StaggerItem>
+        </StaggerChildren>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-dark mb-4">
-            Não deixe seu lançamento ser mais uma estatística
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Converse com nossos especialistas e descubra como podemos ajudar
-            você a evitar esses problemas comuns e criar uma estratégia de
-            lançamento sólida.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
-            >
-              Agendar diagnóstico gratuito
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+        <AnimateOnScroll>
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-semibold text-dark mb-4">
+              Não deixe seu lançamento ser mais uma estatística
+            </h3>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+              Converse com nossos especialistas e descubra como podemos ajudar
+              você a evitar esses problemas comuns e criar uma estratégia de
+              lançamento sólida.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
+              >
+                Agendar diagnóstico gratuito
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
