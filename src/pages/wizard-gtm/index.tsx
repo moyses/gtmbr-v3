@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../../components/ui/button';
 import { ArrowLeft, MessageCircle, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
@@ -220,17 +219,49 @@ const getDiagnosis = (score: number): DiagnosisResult => {
   }
 };
 
-function WizardGTM() {
+// Função para embaralhar array usando o algoritmo Fisher-Yates
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// Função para embaralhar as opções de cada pergunta
+const shuffleStageOptions = (stage: WizardStage): WizardStage => {
+  return {
+    ...stage,
+    options: shuffleArray([...stage.options]),
+  };
+};
+
+// Função para embaralhar todo o wizard (perguntas e opções)
+const shuffleWizard = (stages: WizardStage[]): WizardStage[] => {
+  return shuffleArray(stages.map((stage) => shuffleStageOptions(stage)));
+};
+
+// Componente para garantir randomização apenas no cliente
+const RandomizedWizard: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+  const [stages, setStages] = useState<WizardStage[]>([]);
   const [currentStage, setCurrentStage] = useState(0);
   const [responses, setResponses] = useState<{ [key: number]: number }>({});
   const [showResult, setShowResult] = useState(false);
+
+  // Inicializa o estado apenas quando o componente é montado no cliente
+  useEffect(() => {
+    setMounted(true);
+    setStages(shuffleWizard(wizardStages));
+  }, []);
 
   const handleResponse = (stageId: number, value: number) => {
     const newResponses = { ...responses, [stageId]: value };
     setResponses(newResponses);
 
     setTimeout(() => {
-      if (currentStage < wizardStages.length - 1) {
+      if (currentStage < stages.length - 1) {
         setCurrentStage(currentStage + 1);
       } else {
         setShowResult(true);
@@ -238,13 +269,22 @@ function WizardGTM() {
     }, 500);
   };
 
-  const getTotalScore = () => {
-    return Object.values(responses).reduce((sum, value) => sum + value, 0);
+  const resetWizard = () => {
+    setCurrentStage(0);
+    setResponses({});
+    setShowResult(false);
+    setStages(shuffleWizard(wizardStages));
   };
 
-  const diagnosis = getDiagnosis(getTotalScore());
+  // Não renderiza nada até que o componente seja montado no cliente
+  if (!mounted || stages.length === 0) {
+    return null;
+  }
 
   if (showResult) {
+    const diagnosis = getDiagnosis(
+      Object.values(responses).reduce((sum, value) => sum + value, 0)
+    );
     return (
       <WizardLayout>
         <Head>
@@ -302,11 +342,7 @@ function WizardGTM() {
 
               <div className="mt-8 text-center">
                 <Button
-                  onClick={() => {
-                    setCurrentStage(0);
-                    setResponses({});
-                    setShowResult(false);
-                  }}
+                  onClick={resetWizard}
                   className="bg-brand-primary hover:bg-brand-primary/90 text-white mr-4"
                 >
                   Refazer Avaliação
@@ -327,8 +363,8 @@ function WizardGTM() {
     );
   }
 
-  const stage = wizardStages[currentStage];
-  const progress = ((currentStage + 1) / wizardStages.length) * 100;
+  const stage = stages[currentStage];
+  const progress = ((currentStage + 1) / stages.length) * 100;
 
   return (
     <WizardLayout>
@@ -370,7 +406,7 @@ function WizardGTM() {
                   Avaliação Go-to-Market
                 </h1>
                 <p className="text-gray-300">
-                  Etapa {currentStage + 1} de {wizardStages.length}
+                  Etapa {currentStage + 1} de {stages.length}
                 </p>
               </div>
 
@@ -413,7 +449,7 @@ function WizardGTM() {
                     </p>
                     <div className="space-y-2">
                       {Object.entries(responses).map(([stageId, value]) => {
-                        const prevStage = wizardStages.find(
+                        const prevStage = stages.find(
                           (s) => s.id === parseInt(stageId)
                         );
                         const selectedOption = prevStage?.options.find(
@@ -440,6 +476,22 @@ function WizardGTM() {
           </div>
         </div>
       </div>
+    </WizardLayout>
+  );
+};
+
+// Componente principal que usa o RandomizedWizard
+function WizardGTM() {
+  return (
+    <WizardLayout>
+      <Head>
+        <title>Diagnóstico GTM | GTM BR</title>
+        <meta
+          name="description"
+          content="Faça uma avaliação completa da sua estratégia de Go-to-Market e descubra como melhorar seus resultados."
+        />
+      </Head>
+      <RandomizedWizard />
     </WizardLayout>
   );
 }
