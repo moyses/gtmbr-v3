@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brand-primary: #7c3aed;
+  --brand-secondary: #9333ea;
+  --dark: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-gray-900;
+  }
+}
+
+@layer components {
+  .wizard-score-circle {
+    @apply relative inline-flex flex-col items-center justify-center rounded-full;
+    background: linear-gradient(
+      135deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+  }
+
+  .wizard-score-glow {
+    @apply absolute inset-0 blur-[100px] rounded-full;
+    background: linear-gradient(
+      135deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 /* Previne overflow horizontal */
 html,
 body {

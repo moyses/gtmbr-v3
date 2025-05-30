@@ -1,11 +1,10 @@
-import '@/styles/globals.css';
-import { Layout } from '@/components/layout';
+import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
-import type { ReactElement } from 'react';
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactElement;
+export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
 };
 
 type AppPropsWithLayout = AppProps & {
@@ -13,15 +12,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  // Se a página tem um layout personalizado, use-o
-  if (Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />);
-  }
+  const getLayout = Component.getLayout ?? ((page) => page);
 
-  // Caso contrário, use o layout padrão
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  return getLayout(<Component {...pageProps} />);
 }
