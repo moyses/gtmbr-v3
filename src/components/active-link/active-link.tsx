@@ -4,9 +4,15 @@ import { useRouter } from 'next/router';
 
 type ActiveLinkProps = {
   children: React.ReactNode;
+  className?: string;
 } & LinkProps;
 
-export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
+export const ActiveLink = ({
+  children,
+  href,
+  className,
+  ...rest
+}: ActiveLinkProps) => {
   const router = useRouter();
   const isCurrentPath =
     router.asPath === href ||
@@ -18,8 +24,10 @@ export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
       href={href}
       className={cn(
         'text-action-sm text-gray-100 hover:text-brand-primary transition-all duration-200',
-        isCurrentPath ? 'text-brand-primary' : 'text-muted-foreground'
+        isCurrentPath ? 'text-brand-primary' : 'text-muted-foreground',
+        className
       )}
+      {...rest}
     >
       {children}
     </Link>

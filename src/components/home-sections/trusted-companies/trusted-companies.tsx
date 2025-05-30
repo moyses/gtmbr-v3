@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const TrustedCompanies = () => {
   return (
-    <section className="py-12 bg-white mt-36">
+    <section className="py-12 bg-white mt-5 md:mt-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-gray-400 text-lg">

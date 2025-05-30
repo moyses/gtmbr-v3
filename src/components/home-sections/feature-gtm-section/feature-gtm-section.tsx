@@ -128,7 +128,7 @@ export const FeatureGTMSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12"
         >
           {features.map((feature, index) => (
             <motion.div

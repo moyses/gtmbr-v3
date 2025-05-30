@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '../../ui/button';
 import { useCallback, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -75,21 +76,21 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-dark via-white to-brand-light py-32 relative"
+      className="bg-dark via-white to-brand-light py-16 md:py-24 lg:py-32 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="gap-12 items-center flex flex-col">
+        <div className="gap-8 md:gap-12 items-center flex flex-col">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="space-y-8 text-center"
+            className="space-y-6 md:space-y-8 text-center"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-white text-heading-hg leading-[120%] font-bold max-w-[860px] mx-auto"
+              className="text-white text-3xl md:text-4xl lg:text-heading-hg leading-[120%] font-bold max-w-[860px] mx-auto"
             >
               Lance, valide e
               <motion.span
@@ -108,7 +109,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-              className="text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto"
+              className="text-base md:text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto px-4 sm:px-0"
             >
               Transformamos suas ideias em produtos de mercado com estratégias
               de Go-to-Market comprovadas. Acelere seu crescimento com nossa
@@ -119,17 +120,23 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-              className="flex flex-col sm:flex-row gap-4 mx-auto max-w-[600px]"
+              className="flex flex-col sm:flex-row gap-4 justify-center mx-auto max-w-[600px] px-4 sm:px-0"
             >
               <Button
                 size="lg"
-                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3 text-md"
+                className="bg-brand-primary hover:bg-brand-secondary text-white px-6 md:px-8 py-3 text-sm md:text-md w-full sm:w-auto"
               >
-                Analise sua estratégia agora
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <Link href="/wizard-gtm" title={'Analise sua estratégia agora'}>
+                  Analise sua estratégia agora
+                </Link>
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </Button>
 
-              <Button variant="secondary" size="lg" className="text-md">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="text-sm md:text-md w-full sm:w-auto"
+              >
                 Fale com um consultor
               </Button>
             </motion.div>
@@ -140,7 +147,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
-            className="p-8 grid grid-cols-3 gap-6 relative -mb-60"
+            className="hidden md:grid p-4 md:p-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 relative -mb-20 md:-mb-40 lg:-mb-60"
           >
             {/* Primeiro card */}
             <div className="transform-gpu">
@@ -151,24 +158,24 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                className="bg-white rounded-2xl p-4 md:p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform h-full"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
-                  <h2 className="text-gray-400 text-heading-sm mb-2">
+                  <h2 className="text-gray-400 text-lg md:text-heading-sm mb-2">
                     Product Market Fit
                   </h2>
-                  <p className="text-gray-300 text-body-sm">
+                  <p className="text-gray-300 text-sm md:text-body-sm">
                     Evite lançar no escuro. Alinhe produto e mercado com
                     validações reais.
                   </p>
-                  <div className="text-dark text-heading-hg font-bold">
+                  <div className="text-dark text-2xl md:text-heading-hg font-bold mt-4">
                     +32% de conversão
                   </div>
-                  <p className="text-gray-300 text-body-sm">
+                  <p className="text-gray-300 text-sm md:text-body-sm">
                     em lançamentos validados.
                   </p>
-                  <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 text-action-sm mt-2">
+                  <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 px-3 text-xs md:text-action-sm mt-4">
                     Veja como validar antes de lançar
                   </div>
                 </div>
@@ -176,7 +183,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Coluna do meio com dois cards */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <div className="transform-gpu">
                 <motion.div
                   ref={(el) => {
@@ -185,21 +192,21 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.4 }}
-                  className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                  className="bg-white rounded-2xl p-4 md:p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
                     <div className="flex items-center mb-4">
                       <div>
-                        <h2 className="text-dark text-heading-sm">
+                        <h2 className="text-dark text-lg md:text-heading-sm">
                           Posicionamento Estratégico
                         </h2>
-                        <p className="text-gray-300 text-body-sm">
+                        <p className="text-gray-300 text-sm md:text-body-sm">
                           Mensagens que conectam com o público certo.
                         </p>
                       </div>
                     </div>
-                    <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 text-action-sm">
+                    <div className="inline-block bg-purple-600/10 text-brand-primary rounded-full py-1 px-3 text-xs md:text-action-sm">
                       Diferenciação clara no mercado.
                     </div>
                   </div>
@@ -214,7 +221,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.6 }}
-                  className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                  className="bg-white rounded-2xl p-4 md:p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <div style={{ transform: 'translateZ(50px)' }}>
@@ -245,7 +252,7 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.8 }}
-                className="bg-white rounded-2xl p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
+                className="bg-white rounded-2xl p-4 md:p-6 shadow-xl transition-transform duration-700 ease-out will-change-transform"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div style={{ transform: 'translateZ(50px)' }}>
