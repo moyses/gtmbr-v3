@@ -4,14 +4,13 @@ import {
   ArrowRight,
   Clock,
   Rocket,
-  Target,
-  Zap,
   CheckSquare,
   Earth,
   ChartLine,
   CircleDollarSign,
   Users,
   Box,
+  SearchCheck,
 } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components//ui/button';
@@ -134,7 +133,7 @@ export const WhyGtmbrSection = () => {
             <div className="mt-8 lg:mt-0 w-full">
               <AnimateOnScroll>
                 <h2 className="text-2xl md:text-3xl lg:text-heading-hg font-bold mb-4 md:mb-8">
-                  Por que a Go to Market Brasil é ideal para sua tech company?
+                  Por que a Go to Market Brasil?
                 </h2>
 
                 <p className="text-sm md:text-md text-gray-600 mb-6 md:mb-8">
@@ -213,6 +212,29 @@ export const WhyGtmbrSection = () => {
                       Nossas entregas acontecem em sprints acompanhadas de
                       métricas claras e ajustes constantes para maximizar o
                       impacto no seu negócio.
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem
+                  variants={{
+                    visible: { opacity: 1, x: 0 },
+                    hidden: { opacity: 0, x: -20 },
+                  }}
+                  className="flex items-start gap-3"
+                >
+                  <span className="flex-shrink-0 mt-1">
+                    <SearchCheck className="w-4 md:w-5 h-4 md:h-5 text-brand-primary" />
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 text-sm md:text-base">
+                      Métodos reconhecidos globalmente
+                    </h4>
+                    <p className="text-gray-600 text-xs md:text-sm">
+                      Nossas abordagens seguem os principais frameworks de
+                      lançamento do mercado internacional, desenvolvidos pela
+                      Product Marketing Alliance, adaptados à realidade de
+                      produto e comportamento do consumidor brasileiro.
                     </p>
                   </div>
                 </StaggerItem>
