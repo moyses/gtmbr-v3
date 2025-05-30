@@ -9,6 +9,9 @@ import {
   CheckSquare,
   Earth,
   ChartLine,
+  CircleDollarSign,
+  Users,
+  Box,
 } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components//ui/button';
@@ -28,23 +31,23 @@ type FloatingTag = {
 
 const floatingTags: FloatingTag[] = [
   {
-    text: 'Mais de 10 anos de experiência',
+    text: 'Mercado',
     icon: <Clock className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
-    position: 'top-4 md:top-0 right-4 md:right-20',
+    position: 'top-4 md:top-5 right-4 md:right-20',
   },
   {
-    text: 'Nosso fluxo busca sempre eficiência',
+    text: 'Marketing',
     icon: <Rocket className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
     position: 'top-24 md:top-32 left-4 md:left-0',
   },
   {
-    text: 'Especialista em B2B, B2C e B2B2C',
-    icon: <Target className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+    text: 'Produto',
+    icon: <Box className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
     position: 'bottom-24 md:bottom-20 right-4 md:right-0',
   },
   {
-    text: 'Tecnologia anda junto com inovação',
-    icon: <Zap className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+    text: 'Customer Success',
+    icon: <Users className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
     position: 'bottom-4 md:bottom-0 left-4 md:left-20',
   },
 ];
@@ -114,7 +117,7 @@ export const WhyGtmbrSection = () => {
                 {/* Ícones decorativos */}
                 <div className="absolute top-1/4 right-1/4">
                   <div className="bg-white p-2 md:p-3 rounded-lg shadow-md">
-                    <Target className="w-4 h-4 md:w-6 md:h-6 text-brand-primary" />
+                    <CircleDollarSign className="w-4 h-4 md:w-6 md:h-6 text-brand-primary" />
                   </div>
                 </div>
                 <div className="absolute bottom-1/4 left-1/4">
