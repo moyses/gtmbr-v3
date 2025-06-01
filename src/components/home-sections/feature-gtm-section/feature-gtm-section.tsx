@@ -13,6 +13,7 @@ import {
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { AnimateOnScroll } from '@/components/ui/motion';
+import { useI18n } from '@/i18n';
 
 type Feature = {
   titleBtn: string;
@@ -24,68 +25,48 @@ type Feature = {
   image: string;
 };
 
-const features: Feature[] = [
-  {
-    id: 'analytics',
-    titleBtn: 'Seu produto na rota certa',
-    title: 'Traga seu produto para a rota certa.',
-    description:
-      'Nossa abordagem analítica conecta sua solução a oportunidades reais de mercado, definindo volume de público, concorrência e comportamento de compra.',
-    icon: <RouteIcon />,
-    image: '/example.png',
-    benefits: [
-      'Análise de mercado',
-      'Análise de concorrência e benchmarks',
-      'Mapeamento qualitativo de comportamento e dores da persona',
-    ],
-  },
-  {
-    id: 'marketing',
-    titleBtn: 'Alinhe sua solução',
-    title: 'Alinhe a sua solução para quem realmente precisa dele. ',
-    description:
-      'Definimos como seu produto deve ser percebido e comprado por quem realmente precisa dele. Ajustamos a rota da proposta de valor com margem saudável e aderência ao mercado.',
-    icon: <Blocks />,
-    image: '/example.png',
-    benefits: [
-      'Posicionamento e mensagem',
-      'Estratégia de precificação e empacotamento de funcionalidades',
-      'Desenvolvimento de mensagem central, discurso de vendas e treinamentos',
-    ],
-  },
-  {
-    id: 'privacy',
-    titleBtn: 'Acelere o time to value',
-    title: 'Reduza o time to market e acelere o time to value.',
-    description:
-      'Desenhamos o plano completo de ativação, com foco em reduzir o tempo entre lançamento e geração de receita, incluindo canais, equipe, mensagens e funil de conversão.',
-    icon: <Rocket />,
-    image: '/example.png',
-    benefits: [
-      'Plano tático completo de lançamento',
-      'Alinhamento interfuncional entre produto, marketing e vendas.',
-      'Desenvolvimento de materiais de apoio para ativação e treinamento',
-    ],
-  },
-  {
-    id: 'automation',
-    titleBtn: 'Fidelize seus clientes',
-    title:
-      'Transforme usuários em clientes fiéis com estratégias de longo prazo',
-    description:
-      'Acompanhamos após o go live com estratégias que mantêm o produto em evolução: retendo, reengajando e otimizando sua base com dados de uso e feedback de clientes.',
-    icon: <LaughIcon />,
-    image: '/example.png',
-    benefits: [
-      'Estratégias de engajamento, crescimento e retenção',
-      'Adequação a Product-Led Growth',
-      'Reposicionamento contínuo e testes de tração',
-    ],
-  },
-];
-
 export const FeatureGTMSection = () => {
   const [selectedFeature, setSelectedFeature] = useState<string>('analytics');
+  const { translations } = useI18n();
+
+  const features: Feature[] = [
+    {
+      id: 'analytics',
+      titleBtn: translations.featureGTM.features.analytics.titleBtn,
+      title: translations.featureGTM.features.analytics.title,
+      description: translations.featureGTM.features.analytics.description,
+      icon: <RouteIcon />,
+      image: '/example.png',
+      benefits: translations.featureGTM.features.analytics.benefits,
+    },
+    {
+      id: 'marketing',
+      titleBtn: translations.featureGTM.features.marketing.titleBtn,
+      title: translations.featureGTM.features.marketing.title,
+      description: translations.featureGTM.features.marketing.description,
+      icon: <Blocks />,
+      image: '/example.png',
+      benefits: translations.featureGTM.features.marketing.benefits,
+    },
+    {
+      id: 'privacy',
+      titleBtn: translations.featureGTM.features.privacy.titleBtn,
+      title: translations.featureGTM.features.privacy.title,
+      description: translations.featureGTM.features.privacy.description,
+      icon: <Rocket />,
+      image: '/example.png',
+      benefits: translations.featureGTM.features.privacy.benefits,
+    },
+    {
+      id: 'automation',
+      titleBtn: translations.featureGTM.features.automation.titleBtn,
+      title: translations.featureGTM.features.automation.title,
+      description: translations.featureGTM.features.automation.description,
+      icon: <LaughIcon />,
+      image: '/example.png',
+      benefits: translations.featureGTM.features.automation.benefits,
+    },
+  ];
 
   return (
     <section className="py-24 bg-white">
@@ -99,16 +80,7 @@ export const FeatureGTMSection = () => {
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6"
             >
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-                className="text-brand-primary"
-              >
-                Metodologia completa
-              </motion.span>{' '}
-              para lançar seu produto digital com sucesso.
+              {translations.featureGTM.title}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -117,8 +89,7 @@ export const FeatureGTMSection = () => {
               transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Nossa abordagem integra produto, marketing e vendas para garantir
-              que seu lançamento alcance os resultados esperados no mercado.
+              {translations.featureGTM.description}
             </motion.p>
           </div>
         </AnimateOnScroll>

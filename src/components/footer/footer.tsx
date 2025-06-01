@@ -7,8 +7,11 @@ import {
   MapPin,
 } from 'lucide-react';
 import Image from 'next/image';
+import { useI18n } from '@/i18n';
 
 export const Footer = () => {
+  const { translations } = useI18n();
+
   return (
     <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -23,8 +26,7 @@ export const Footer = () => {
               />
             </h3>
             <p className="text-brand-light leading-relaxed">
-              Transformamos ideias em sucessos de mercado com estratégias
-              comprovadas de go-to-market.
+              {translations.footer.description}
             </p>
             <div className="flex space-x-4">
               <Linkedin className="w-6 h-6 text-brand-light hover:text-white cursor-pointer transition-colors" />
@@ -35,14 +37,16 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Links Rápidos</h4>
+            <h4 className="text-lg font-semibold">
+              {translations.footer.quickLinks.title}
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Sobre Nós
+                  {translations.footer.quickLinks.about}
                 </a>
               </li>
               <li>
@@ -50,7 +54,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Nossos Serviços
+                  {translations.footer.quickLinks.services}
                 </a>
               </li>
               <li>
@@ -58,7 +62,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Case Studies
+                  {translations.footer.quickLinks.caseStudies}
                 </a>
               </li>
               <li>
@@ -66,7 +70,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Blog
+                  {translations.footer.quickLinks.blog}
                 </a>
               </li>
             </ul>
@@ -74,14 +78,16 @@ export const Footer = () => {
 
           {/* Services */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Serviços</h4>
+            <h4 className="text-lg font-semibold">
+              {translations.footer.services.title}
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Lançamento de Produto
+                  {translations.footer.services.productLaunch}
                 </a>
               </li>
               <li>
@@ -89,7 +95,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  PMM as a Service
+                  {translations.footer.services.pmmService}
                 </a>
               </li>
               <li>
@@ -97,7 +103,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Marketing Estratégico
+                  {translations.footer.services.strategicMarketing}
                 </a>
               </li>
               <li>
@@ -105,7 +111,7 @@ export const Footer = () => {
                   href="#"
                   className="text-action-sm text-brand-light hover:text-white transition-colors"
                 >
-                  Consultoria
+                  {translations.footer.services.consulting}
                 </a>
               </li>
             </ul>
@@ -113,24 +119,26 @@ export const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Contato</h4>
+            <h4 className="text-lg font-semibold">
+              {translations.footer.contact.title}
+            </h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-light" />
                 <span className="text-action-sm text-brand-light">
-                  contato@gtmbrasil.com
+                  {translations.footer.contact.email}
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-light" />
                 <span className="text-action-sm text-brand-light">
-                  +55 11 9999-9999
+                  {translations.footer.contact.phone}
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-brand-light" />
                 <span className="text-action-sm text-brand-light">
-                  São Paulo, SP
+                  {translations.footer.contact.address}
                 </span>
               </div>
             </div>
@@ -139,27 +147,25 @@ export const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-brand-secondary/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-brand-light">
-            © 2024 Go to Market Brasil. Todos os direitos reservados.
-          </p>
+          <p className="text-brand-light">{translations.footer.copyright}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
               href="#"
               className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
-              Privacidade
+              {translations.footer.legal.privacy}
             </a>
             <a
               href="#"
               className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
-              Termos
+              {translations.footer.legal.terms}
             </a>
             <a
               href="#"
               className="text-action-sm text-brand-light hover:text-white transition-colors"
             >
-              Cookies
+              {translations.footer.legal.cookies}
             </a>
           </div>
         </div>

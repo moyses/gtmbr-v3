@@ -21,6 +21,7 @@ import {
   StaggerChildren,
   StaggerItem,
 } from '@/components//ui/motion';
+import { useI18n } from '@/i18n';
 
 type FloatingTag = {
   text: string;
@@ -28,30 +29,32 @@ type FloatingTag = {
   position: string;
 };
 
-const floatingTags: FloatingTag[] = [
-  {
-    text: 'Mercado',
-    icon: <Clock className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
-    position: 'top-4 md:top-5 right-4 md:right-20',
-  },
-  {
-    text: 'Marketing',
-    icon: <Rocket className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
-    position: 'top-24 md:top-32 left-4 md:left-0',
-  },
-  {
-    text: 'Produto',
-    icon: <Box className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
-    position: 'bottom-24 md:bottom-20 right-4 md:right-0',
-  },
-  {
-    text: 'Customer Success',
-    icon: <Users className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
-    position: 'bottom-4 md:bottom-0 left-4 md:left-20',
-  },
-];
-
 export const WhyGtmbrSection = () => {
+  const { translations } = useI18n();
+
+  const floatingTags: FloatingTag[] = [
+    {
+      text: translations.whyGtmbr.tags.market,
+      icon: <Clock className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+      position: 'top-4 md:top-5 right-4 md:right-20',
+    },
+    {
+      text: translations.whyGtmbr.tags.marketing,
+      icon: <Rocket className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+      position: 'top-24 md:top-32 left-4 md:left-0',
+    },
+    {
+      text: translations.whyGtmbr.tags.product,
+      icon: <Box className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+      position: 'bottom-24 md:bottom-20 right-4 md:right-0',
+    },
+    {
+      text: translations.whyGtmbr.tags.customerSuccess,
+      icon: <Users className="w-4 h-4 md:w-5 md:h-5 text-brand-primary" />,
+      position: 'bottom-4 md:bottom-0 left-4 md:left-20',
+    },
+  ];
+
   return (
     <section className="py-12 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,15 +136,11 @@ export const WhyGtmbrSection = () => {
             <div className="mt-8 lg:mt-0 w-full">
               <AnimateOnScroll>
                 <h2 className="text-2xl md:text-3xl lg:text-heading-hg font-bold mb-4 md:mb-8">
-                  Por que a Go to Market Brasil?
+                  {translations.whyGtmbr.title}
                 </h2>
 
                 <p className="text-sm md:text-md text-gray-600 mb-6 md:mb-8">
-                  Combinamos profundidade técnica, visão de negócio e
-                  experiência real em lançamentos de diferentes portes e
-                  complexidades. Nosso modelo conecta inteligência estratégica à
-                  execução prática, respeitando o tempo e os desafios de cada
-                  empresa.
+                  {translations.whyGtmbr.description}
                 </p>
               </AnimateOnScroll>
 
@@ -158,16 +157,10 @@ export const WhyGtmbrSection = () => {
                   </span>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm md:text-base">
-                      +100 especialistas em Product Marketing
+                      {translations.whyGtmbr.features.specialists.title}
                     </h4>
                     <p className="text-gray-600 text-xs md:text-sm">
-                      Atuamos em parceria com a{' '}
-                      <span className="text-brand-primary font-medium">
-                        Elas que Lançam,
-                      </span>{' '}
-                      a maior comunidade de PMMs do Brasil, com profissionais de
-                      diferentes indústrias, prontos para compor equipes
-                      multidisciplinares.
+                      {translations.whyGtmbr.features.specialists.description}
                     </p>
                   </div>
                 </StaggerItem>
@@ -184,12 +177,10 @@ export const WhyGtmbrSection = () => {
                   </span>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm md:text-base">
-                      Experiência de mercado em múltiplos níveis
+                      {translations.whyGtmbr.features.experience.title}
                     </h4>
                     <p className="text-gray-600 text-xs md:text-sm">
-                      De startups em tração a multinacionais com portfólio
-                      consolidado, nossa vivência traz adaptabilidade, agilidade
-                      e profundidade estratégica para cada contexto.
+                      {translations.whyGtmbr.features.experience.description}
                     </p>
                   </div>
                 </StaggerItem>
@@ -206,12 +197,10 @@ export const WhyGtmbrSection = () => {
                   </span>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm md:text-base">
-                      Metodologia ágil com foco em resultado
+                      {translations.whyGtmbr.features.methodology.title}
                     </h4>
                     <p className="text-gray-600 text-xs md:text-sm">
-                      Nossas entregas acontecem em sprints acompanhadas de
-                      métricas claras e ajustes constantes para maximizar o
-                      impacto no seu negócio.
+                      {translations.whyGtmbr.features.methodology.description}
                     </p>
                   </div>
                 </StaggerItem>
@@ -228,21 +217,21 @@ export const WhyGtmbrSection = () => {
                   </span>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm md:text-base">
-                      Métodos reconhecidos globalmente
+                      {translations.whyGtmbr.features.focus.title}
                     </h4>
                     <p className="text-gray-600 text-xs md:text-sm">
-                      Nossas abordagens seguem os principais frameworks de
-                      lançamento do mercado internacional, desenvolvidos pela
-                      Product Marketing Alliance, adaptados à realidade de
-                      produto e comportamento do consumidor brasileiro.
+                      {translations.whyGtmbr.features.focus.description}
                     </p>
                   </div>
                 </StaggerItem>
               </StaggerChildren>
 
-              <Button size="lg" className="w-full md:w-auto">
-                Fale com um especialista
-                <ArrowRight className="ml-2 w-4 h-4" />
+              <Button
+                size="lg"
+                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
+              >
+                {translations.whyGtmbr.analyzeButton}
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
           </AnimateOnScrollFromRight>

@@ -2,19 +2,20 @@
 
 import Image from 'next/image';
 import { StaggerChildren, StaggerItem } from '@/components/ui/motion';
+import { useI18n } from '@/i18n';
 
 export const LaunchFailSection = () => {
+  const { translations } = useI18n();
+
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6">
-            Por que produtos digitais{' '}
-            <span className="text-brand-primary">falham no lançamento?</span>
+            {translations.launchFail.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Entenda os principais erros que levam produtos promissores a não
-            decolarem no mercado.
+            {translations.launchFail.description}
           </p>
         </div>
 
@@ -31,19 +32,17 @@ export const LaunchFailSection = () => {
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
                   src="/icons/sad-face.svg"
-                  alt="Falta de clareza"
+                  alt={translations.launchFail.cards.clarity.title}
                   width={24}
                   height={24}
                 />
               </div>
             </div>
             <h3 className="text-brand-primary text-lg mb-2">
-              Falta de clareza do mercado
+              {translations.launchFail.cards.clarity.title}
             </h3>
             <p className="text-gray-400">
-              Decisões baseadas em suposições levam a produtos desalinhados com
-              a realidade da demanda. Isso gera uma baixa adoção e alto custo de
-              aquisição.
+              {translations.launchFail.cards.clarity.description}
             </p>
           </StaggerItem>
 
@@ -59,19 +58,17 @@ export const LaunchFailSection = () => {
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
                   src="/icons/chart.svg"
-                  alt="Posicionamento"
+                  alt={translations.launchFail.cards.positioning.title}
                   width={24}
                   height={24}
                 />
               </div>
             </div>
             <h3 className="text-brand-primary text-lg mb-2">
-              Posicionamento genérico perante concorrência
+              {translations.launchFail.cards.positioning.title}
             </h3>
             <p className="text-gray-400">
-              Sem uma narrativa clara de diferenciação, o produto entra na
-              disputa por preço ou é comparado a soluções com escopo diferente.
-              Isso afeta a percepção de valor e prejudica as vendas.
+              {translations.launchFail.cards.positioning.description}
             </p>
           </StaggerItem>
 
@@ -87,19 +84,17 @@ export const LaunchFailSection = () => {
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
                   src="/icons/money.svg"
-                  alt="Precificação"
+                  alt={translations.launchFail.cards.pricing.title}
                   width={24}
                   height={24}
                 />
               </div>
             </div>
             <h3 className="text-brand-primary text-lg mb-2">
-              Precificação ineficaz{' '}
+              {translations.launchFail.cards.pricing.title}
             </h3>
             <p className="text-gray-400">
-              Preços mal ancorados, empacotamento confuso e margens
-              desbalanceadas impactam a escalabilidade e a sustentabilidade do
-              seu produto digital.
+              {translations.launchFail.cards.pricing.description}
             </p>
           </StaggerItem>
 
@@ -115,20 +110,17 @@ export const LaunchFailSection = () => {
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
                   src="/icons/target.svg"
-                  alt="Desalinhamento"
+                  alt={translations.launchFail.cards.alignment.title}
                   width={24}
                   height={24}
                 />
               </div>
             </div>
             <h3 className="text-brand-primary text-lg mb-2">
-              Desalinhamento entre produto, marketing e vendas
+              {translations.launchFail.cards.alignment.title}
             </h3>
             <p className="text-gray-400">
-              Sem integração entre as áreas, a jornada do cliente se fragmenta.
-              O marketing gera leads que não convertem, o comercial não sabe
-              comunicar valor, e o produto não responde ao que o mercado
-              precisa.
+              {translations.launchFail.cards.alignment.description}
             </p>
           </StaggerItem>
         </StaggerChildren>

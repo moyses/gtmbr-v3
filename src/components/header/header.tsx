@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { ActiveLink } from '../active-link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe, Languages } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useI18n } from '@/i18n';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { translations, locale, changeLocale } = useI18n();
 
   // Fecha o menu quando a tela é redimensionada para desktop
   useEffect(() => {
@@ -65,13 +67,33 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 text-gray-100">
-            <ActiveLink href="/solutions">Soluções</ActiveLink>
-            <ActiveLink href="/services">Serviços AAS</ActiveLink>
-            <ActiveLink href="/business-types">Tipos de Negócio</ActiveLink>
-            <ActiveLink href="/resources">Recursos</ActiveLink>
-            <ActiveLink href="/blog">Blog</ActiveLink>
-            <Button size="sm" className="ml-2">
-              <Link href="/especialist">Falar com especialista</Link>
+            <ActiveLink href="/solutions">
+              {translations.header.solutions}
+            </ActiveLink>
+            <ActiveLink href="/services">
+              {translations.header.services}
+            </ActiveLink>
+            <ActiveLink href="/business-types">
+              {translations.header.businessTypes}
+            </ActiveLink>
+            <ActiveLink href="/resources">
+              {translations.header.resources}
+            </ActiveLink>
+            <ActiveLink href="/blog">{translations.header.blog}</ActiveLink>
+
+            <Button size="sm" className="">
+              <Link href="/especialist">
+                {translations.header.talkToSpecialist}
+              </Link>
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => changeLocale(locale === 'pt-BR' ? 'en' : 'pt-BR')}
+              className="flex items-center gap-2 font-bold -ml-2"
+            >
+              <Languages size={16} />
+              {locale === 'pt-BR' ? 'EN' : 'PT-BR'}
             </Button>
           </nav>
         </div>
@@ -89,36 +111,47 @@ export const Header = () => {
                 href="/solutions"
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
-                Soluções
+                {translations.header.solutions}
               </ActiveLink>
               <ActiveLink
                 href="/services"
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
-                Serviços AAS
+                {translations.header.services}
               </ActiveLink>
               <ActiveLink
                 href="/business-types"
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
-                Tipos de Negócio
+                {translations.header.businessTypes}
               </ActiveLink>
               <ActiveLink
                 href="/resources"
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
-                Recursos
+                {translations.header.resources}
               </ActiveLink>
               <ActiveLink
                 href="/blog"
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
-                Blog
+                {translations.header.blog}
               </ActiveLink>
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() =>
+                  changeLocale(locale === 'pt-BR' ? 'en' : 'pt-BR')
+                }
+                className="w-full flex items-center justify-center gap-2"
+              >
+                <Globe size={16} />
+                {locale === 'pt-BR' ? 'EN' : 'PT-BR'}
+              </Button>
               <div className="pt-4">
                 <Button className="w-full" size="lg">
                   <Link href="/especialist" className="w-full text-center">
-                    Falar com especialista
+                    {translations.header.talkToSpecialist}
                   </Link>
                 </Button>
               </div>

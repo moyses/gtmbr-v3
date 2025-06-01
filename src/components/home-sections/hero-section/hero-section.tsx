@@ -5,11 +5,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useCallback, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/i18n';
 
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const animationFrameRef = useRef<number | null>(null);
+  const { translations } = useI18n();
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!sectionRef.current) return;
@@ -92,17 +94,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-white text-3xl md:text-4xl lg:text-heading-hg leading-[120%] font-bold max-w-[860px] mx-auto"
             >
-              Lance, valide e
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
-                className="text-brand-primary"
-              >
-                {' '}
-                escale seu software ou aplicativo
-              </motion.span>{' '}
-              do jeito certo. No tempo certo.
+              {translations.hero.title}
             </motion.h1>
 
             <motion.p
@@ -111,9 +103,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
               className="text-base md:text-lg text-gray-200 leading-relaxed max-w-[800px] mx-auto px-4 sm:px-0"
             >
-              Transformamos suas ideias em produtos de mercado com estratégias
-              de Go-to-Market comprovadas. Acelere seu crescimento com nossa
-              metodologia especializada.
+              {translations.hero.description}
             </motion.p>
 
             <motion.div
@@ -126,8 +116,11 @@ export const HeroSection = () => {
                 size="lg"
                 className="bg-brand-primary hover:bg-brand-secondary text-white px-6 md:px-8 py-3 text-sm md:text-md w-full sm:w-auto"
               >
-                <Link href="/wizard-gtm" title={'Analise sua estratégia agora'}>
-                  Analise sua estratégia agora
+                <Link
+                  href="/wizard-gtm"
+                  title={translations.hero.analyzeButton}
+                >
+                  {translations.hero.analyzeButton}
                 </Link>
                 <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </Button>
@@ -137,7 +130,7 @@ export const HeroSection = () => {
                 size="lg"
                 className="text-sm md:text-md w-full sm:w-auto"
               >
-                Fale com um consultor
+                {translations.hero.consultantButton}
               </Button>
             </motion.div>
           </motion.div>

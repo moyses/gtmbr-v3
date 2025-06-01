@@ -8,6 +8,7 @@ import {
   UserPen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useI18n } from '@/i18n';
 
 import {
   AnimateOnScroll,
@@ -22,45 +23,6 @@ type CardProps = {
   description: string;
   items: string[];
 };
-
-const cards: CardProps[] = [
-  {
-    icon: <SquareChartGantt className="w-8 h-8 text-brand-primary" />,
-    label: 'PMM as a Service',
-    title: 'Gestão estratégica contínua de marketing de produto',
-    description:
-      'Analisamos continuamente o posicionamento, comportamento do mercado, concorrência e resultados do produto. Atuamos como uma extensão do seu time, garantindo que as decisões não sejam tomadas com base apenas em achismos, mas em dados, contexto e estratégia.',
-    items: [
-      'Gestão estratégica contínua de marketing de produto',
-      'Análises recorrentes de concorrência e posicionamento',
-      'Apoio na priorização de roadmap com foco em impacto',
-    ],
-  },
-  {
-    icon: <UserCheck className="w-8 h-8 text-brand-primary" />,
-    label: 'PMM as a Service',
-    title: 'Estratégia comercial para produtos de Alto Ticket',
-    description:
-      'Para produtos de venda consultiva e ciclo longo, estruturamos estratégias de GTM com foco em geração de pipeline qualificado e tração nas contas certas. Inclui diagnóstico do funil, análise de perdas e estruturação de campanhas baseadas em contas (ABM).',
-    items: [
-      'Diagnóstico comercial orientado a dados',
-      'Estratégia de Account-Based Marketing (ABM)',
-      'Posicionamento e discurso alinhados ao processo de venda B2B enterprise',
-    ],
-  },
-  {
-    icon: <UserPen className="w-8 h-8 text-brand-primary" />,
-    label: 'PM as a Service',
-    title: 'Traduzimos objetivos de negócio em decisões técnicas assertivas',
-    description:
-      'Com background técnico e visão estratégica, atuamos como um elo entre tecnologia e negócio ao avaliar seu MVP, os requisitos e as entregas da software house ou time interno, para alinhar o que está sendo desenvolvido com o que, de fato, o mercado precisa.',
-    items: [
-      'Avaliação funcional e estratégica de MVPs em desenvolvimento',
-      'Alinhamento entre expectativas de negócio e entregas técnicas',
-      'Interlocução qualificada com software houses e squads de produto',
-    ],
-  },
-];
 
 const Card = ({ icon, label, title, description, items }: CardProps) => {
   return (
@@ -96,20 +58,42 @@ const Card = ({ icon, label, title, description, items }: CardProps) => {
 };
 
 export const GtmbrAasSection = () => {
+  const { translations } = useI18n();
+
+  const cards: CardProps[] = [
+    {
+      icon: <SquareChartGantt className="w-8 h-8 text-brand-primary" />,
+      label: 'PMM as a Service',
+      title: translations.gtmbrAas.cards.pmm.title,
+      description: translations.gtmbrAas.cards.pmm.description,
+      items: translations.gtmbrAas.cards.pmm.items,
+    },
+    {
+      icon: <UserCheck className="w-8 h-8 text-brand-primary" />,
+      label: 'PMM as a Service',
+      title: translations.gtmbrAas.cards.gtm.title,
+      description: translations.gtmbrAas.cards.gtm.description,
+      items: translations.gtmbrAas.cards.gtm.items,
+    },
+    {
+      icon: <UserPen className="w-8 h-8 text-brand-primary" />,
+      label: 'PM as a Service',
+      title: translations.gtmbrAas.cards.pm.title,
+      description: translations.gtmbrAas.cards.pm.description,
+      items: translations.gtmbrAas.cards.pm.items,
+    },
+  ];
+
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center mb-16">
             <h2 className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6">
-              <span className="text-brand-primary">
-                Go to Market é uma disciplina.
-              </span>{' '}
-              E nós cobrimos todos os ângulos dela.
+              {translations.gtmbrAas.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Do MVP ao portfólio multiregional, entregamos estratégia onde seu
-              time precisa de profundidade.
+              {translations.gtmbrAas.description}
             </p>
           </div>
         </AnimateOnScroll>
@@ -123,14 +107,14 @@ export const GtmbrAasSection = () => {
         <AnimateOnScroll>
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Quer contratar um profissional AaS para o seu time?
+              {translations.gtmbrAas.hireTitle}
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
               >
-                Agendar uma conversa
+                {translations.gtmbrAas.scheduleButton}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
