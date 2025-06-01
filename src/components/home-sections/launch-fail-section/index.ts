@@ -1,1 +1,1 @@
-export * from './launch-fail-section';
+export { LaunchFailSection } from './launch-fail-section';

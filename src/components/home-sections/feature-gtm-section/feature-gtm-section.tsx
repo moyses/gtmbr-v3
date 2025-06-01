@@ -106,9 +106,9 @@ export const FeatureGTMSection = () => {
                 transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
                 className="text-brand-primary"
               >
-                Somos o elo estratégico
+                Metodologia completa
               </motion.span>{' '}
-              entre produto, mercado, receita e execução.
+              para lançar seu produto digital com sucesso.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -117,8 +117,8 @@ export const FeatureGTMSection = () => {
               transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Gerencie todas as suas tags de marketing, analytics e rastreamento
-              em uma única plataforma intuitiva.
+              Nossa abordagem integra produto, marketing e vendas para garantir
+              que seu lançamento alcance os resultados esperados no mercado.
             </motion.p>
           </div>
         </AnimateOnScroll>

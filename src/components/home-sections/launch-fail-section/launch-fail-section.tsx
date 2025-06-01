@@ -1,33 +1,22 @@
 'use client';
 
 import Image from 'next/image';
-
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  AnimateOnScroll,
-  StaggerChildren,
-  StaggerItem,
-} from '@/components/ui/motion';
+import { StaggerChildren, StaggerItem } from '@/components/ui/motion';
 
 export const LaunchFailSection = () => {
   return (
-    <section className="py-24 bg-gray-200/20">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll>
-          <div className="text-center mb-16">
-            <h2 className="max-w-[860px] mx-auto text-heading-hg font-bold text-dark mb-6">
-              A maioria dos{' '}
-              <span className="text-brand-primary">lançamentos falha</span> por
-              motivos que poderiam ser evitados.
-            </h2>
-            <p className="text-gray-800 text-lg max-w-3xl mx-auto">
-              Mesmo empresas com bons produtos enfrentam barreiras silenciosas
-              que comprometem resultados desde o primeiro trimestre
-              pós-lançamento.
-            </p>
-          </div>
-        </AnimateOnScroll>
+        <div className="text-center mb-16">
+          <h2 className="text-heading-hg max-w-[860px] mx-auto font-bold text-dark mb-6">
+            Por que produtos digitais{' '}
+            <span className="text-brand-primary">falham no lançamento?</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Entenda os principais erros que levam produtos promissores a não
+            decolarem no mercado.
+          </p>
+        </div>
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1 - Falta de clareza */}
@@ -125,7 +114,7 @@ export const LaunchFailSection = () => {
             <div className="mb-6">
               <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                 <Image
-                  src="/icons/person.svg"
+                  src="/icons/target.svg"
                   alt="Desalinhamento"
                   width={24}
                   height={24}
@@ -143,29 +132,6 @@ export const LaunchFailSection = () => {
             </p>
           </StaggerItem>
         </StaggerChildren>
-
-        {/* CTA Section */}
-        <AnimateOnScroll>
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold text-dark mb-4">
-              Não deixe seu lançamento ser mais uma estatística
-            </h3>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Converse com nossos especialistas e descubra como podemos ajudar
-              você a evitar esses problemas comuns e criar uma estratégia de
-              lançamento sólida.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-brand-primary hover:bg-brand-secondary text-white px-8 py-3"
-              >
-                Agendar diagnóstico gratuito
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
   );

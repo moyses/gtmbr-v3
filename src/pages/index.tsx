@@ -4,10 +4,13 @@ import { LaunchFailSection } from '@/components/home-sections/launch-fail-sectio
 import { TrustedCompanies } from '@/components/home-sections/trusted-companies';
 import { WhyGtmbrSection } from '@/components/home-sections/why-gtmbr-section';
 import { FeatureGTMSection } from '@/components/home-sections/feature-gtm-section';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
     <>
+      <Header />
       <article>
         <HeroSection />
         <TrustedCompanies />
@@ -16,6 +19,7 @@ export default function Home() {
         <GtmbrAasSection />
         <WhyGtmbrSection />
       </article>
+      <Footer />
     </>
   );
 }
