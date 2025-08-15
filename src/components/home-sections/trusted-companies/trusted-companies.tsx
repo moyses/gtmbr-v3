@@ -16,42 +16,42 @@ export const TrustedCompanies = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-          <div className="w-32 h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="w-36 h-14 relative grayscale hover:grayscale-0 transition-all duration-300">
             <Image
-              src="/companies/coinbase.svg"
-              alt="Coinbase"
+              src="/companies/vertxgo.svg"
+              alt="VertxGo"
               fill
               className="object-contain"
             />
           </div>
-          <div className="w-32 h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="w-52 h-16 relative grayscale hover:grayscale-0 transition-all duration-300">
             <Image
-              src="/companies/slack.svg"
-              alt="Slack"
+              src="/companies/deszos.svg"
+              alt="Deszos assessoria e negócios"
               fill
               className="object-contain"
             />
           </div>
-          <div className="w-32 h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="w-52 h-16 relative grayscale hover:grayscale-0 transition-all duration-300">
             <Image
-              src="/companies/dropbox.svg"
-              alt="Dropbox"
+              src="/companies/psicoagora.svg"
+              alt="Psicoagora"
               fill
               className="object-contain"
             />
           </div>
-          <div className="w-32 h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="w-44 h-14 relative grayscale hover:grayscale-0 transition-all duration-300">
             <Image
-              src="/companies/webflow.svg"
-              alt="Webflow"
+              src="/companies/mgf.svg"
+              alt="Método gestão farma"
               fill
               className="object-contain"
             />
           </div>
-          <div className="w-32 h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="w-52 h-14 relative grayscale hover:grayscale-0 transition-all duration-300">
             <Image
-              src="/companies/zoom.svg"
-              alt="Zoom"
+              src="/companies/moveisnorte.svg"
+              alt="Móveis Norte"
               fill
               className="object-contain"
             />

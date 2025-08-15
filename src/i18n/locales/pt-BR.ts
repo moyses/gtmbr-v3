@@ -11,21 +11,22 @@ export const ptBR = {
     services: 'Serviços AAS',
     businessTypes: 'Tipos de Negócio',
     resources: 'Recursos',
-    blog: 'Blog',
+    // blog: 'Blog',
     talkToSpecialist: 'Falar com especialista',
   },
   hero: {
     title:
-      'Lance, valide e escale seu software ou aplicativo do jeito certo. No tempo certo.',
+      'Somos a ponte inteligente que falta entre seu software e o mercado.',
     description:
-      'Transformamos suas ideias em produtos de mercado com estratégias de Go-to-Market comprovadas. Acelere seu crescimento com nossa metodologia especializada.',
+      'Implementamos metodologias globais que colocam seu software ou aplicativo na rota certa, eliminando o desperdício com o cliente errado, otimizando recursos de tecnologia para inovação e acelerando seu retorno sobre o investimento.',
     analyzeButton: 'Analise sua estratégia agora',
     consultantButton: 'Fale com um consultor',
   },
   featureGTM: {
-    title: 'Metodologia completa para lançar seu produto digital com sucesso.',
+    title:
+      'Go-to-Market: A estratégia que coloca seu produto na rota de quem precisa dele.',
     description:
-      'Nossa abordagem integra produto, marketing e vendas para garantir que seu lançamento alcance os resultados esperados no mercado.',
+      'Empresas líderes de mercado não contam com a sorte. Elas operam com uma estratégia de Go-to-Market que transforma a visão do produto em receita de forma consistente, previsível e escalável. Aplicamos metologias globais testadas e validadas pelas maiores empresas de tecnologia do mundo, adaptando-os para a realidade do seu negócio.',
     features: {
       analytics: {
         titleBtn: 'Seu produto na rota certa',
@@ -75,9 +76,9 @@ export const ptBR = {
     },
   },
   launchFail: {
-    title: 'Por que produtos digitais falham no lançamento?',
+    title: 'O gasto oculto das empresas de tecnologia',
     description:
-      'Entenda os principais erros que levam produtos promissores a não decolarem no mercado.',
+      'À medida que uma empresa de tecnologia cresce, a comunicação entre os times de Produto, Marketing e Vendas naturalmente se torna mais complexa. O que antes era resolvido em uma conversa de corredor, agora pode gerar ruídos que custa caro.',
     cards: {
       clarity: {
         title: 'Falta de clareza do mercado',
@@ -103,9 +104,9 @@ export const ptBR = {
   },
   gtmbrAas: {
     title:
-      'Go to Market é uma disciplina. E nós cobrimos todos os ângulos dela.',
+      'Especialistas em traduzir o seu negócio de  tecnologia em negócio para o mercado.',
     description:
-      'Do MVP ao portfólio multiregional, entregamos estratégia onde seu time precisa de profundidade.',
+      'Do MVP ao produto global, entregamos estratégia onde seu time precisa de profundidade.',
     hireTitle: 'Quer contratar um profissional AaS para o seu time?',
     scheduleButton: 'Agendar uma conversa',
     cards: {
@@ -195,9 +196,9 @@ export const ptBR = {
     },
     contact: {
       title: 'Contato',
-      email: 'contato@gtmbrasil.com',
-      phone: '+55 11 9999-9999',
-      address: 'São Paulo, SP',
+      email: 'kimberlysalmi@gotomarketbrasil.com',
+      phone: '+55 19 997150-6566',
+      address: 'Campinas, SP',
     },
     copyright: '© 2024 Go to Market Brasil. Todos os direitos reservados.',
     legal: {
