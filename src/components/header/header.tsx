@@ -79,7 +79,6 @@ export const Header = () => {
             <ActiveLink href="/resources">
               {translations.header.resources}
             </ActiveLink>
-            <ActiveLink href="/blog">{translations.header.blog}</ActiveLink>
 
             <Button size="sm" className="">
               <Link href="/especialist">
@@ -130,12 +129,6 @@ export const Header = () => {
                 className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
               >
                 {translations.header.resources}
-              </ActiveLink>
-              <ActiveLink
-                href="/blog"
-                className="block w-full text-lg text-center py-3 text-white hover:text-brand-primary transition-colors"
-              >
-                {translations.header.blog}
               </ActiveLink>
               <Button
                 variant="secondary"
