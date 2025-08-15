@@ -11,7 +11,6 @@ export const ptBR = {
     services: 'Serviços AAS',
     businessTypes: 'Tipos de Negócio',
     resources: 'Recursos',
-    // blog: 'Blog',
     talkToSpecialist: 'Falar com especialista',
   },
   hero: {
