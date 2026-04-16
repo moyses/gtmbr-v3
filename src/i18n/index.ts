@@ -1,3 +1,3 @@
-export * from './context';
-export * from './locales/pt-BR';
-export * from './locales/en';
+export { I18nProvider, useI18n } from '@/providers/i18n-provider';
+export { ptBR } from './locales/pt-BR';
+export { en } from './locales/en';
